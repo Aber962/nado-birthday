@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>عيد ميلاد ندو – من إبراهيم</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      color: #3a2c2c;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .header {
+      background-image: url("image.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .message, .video, .yearly-message, footer {
+      animation: fadeIn 3s ease-in-out;
+    }
+    .message {
+      font-size: 24px;
+      margin: 30px auto;
+      max-width: 600px;
+      background-color: #fdf1e8;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .video {
+      margin: 20px auto;
+    }
+    .yearly-message {
+      margin-top: 40px;
+      font-style: italic;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+      color: #666;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .share-button, .music-button {
+      padding: 10px 20px;
+      background-color: #3a2c2c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 20px;
+    }
+    .share-button:hover, .music-button:hover {
+      background-color: #594444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header"></div>
+
+ <div class="message" style="font-size: 22px; line-height: 1.8; background-color: #fef5ed; padding: 20px; border-radius: 10px; max-width: 700px; margin: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  <p>إلى ندو،</p>
+
+  <p>كل عام وأنتِ النبض اللي علّمني كيف للحياة تصير أجمل، والابتسامة اللي تسكنني حتى وأنا بعيد.</p>
+
+  <p>اليوم، في 15 أبريل، مو بس يوم ميلادك… هو يوم ميلاد كل لحظة حلوة عشتها معاك، وكل شعور صادق كبر جواتي من أول ما عرفتك.</p>
+
+  <p>يمكن المسافة تفصل بيننا، ويمكن ما أقدر أكون جنبك وأطفي شموعك بيدي… بس قلبي عندك، يدعي لك، يحبك، ويعيش على طيفك.</p>
+
+  <p>صار لنا سنتين، وكل لحظة فيها كنتِ فيها الحلم، والواقع، والسكينة.</p>
+
+  <p>ندو، وجودك نعمة، وحبك أمان. أتمنى لك سنة جديدة تضحكين فيها أكثر، وتكون أيامك فيها أحنّ وأجمل.</p>
+
+  <p>بحبك من قلب إبراهيم… واليوم أعشقك أكثر.</p>
+</div>
+  <div class="video">
+    <video width="80%" controls>
+      <source src="video.mp4" type="video/mp4">
+      المتصفح لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+
+  <div class="yearly-message">
+    <p>إبراهيم – 2025: أول رسالة في صفحة حبنا الرقمية.</p>
+    <p>وسأعود كل سنة أكتب لكِ رسالة جديدة...</p>
+  </div>
+
+  <div>
+    <button class="share-button" onclick="shareWhatsApp()">مشاركة على واتساب</button>
+    <button class="music-button" onclick="toggleMusic()">تشغيل/إيقاف الموسيقى الخلفية</button>
+  </div>
+  
+  <!-- عنصر الموسيقى الخلفية -->
+  <audio id="bgMusic" loop>
+    <source src="audio.mpeg" type="audio/mp3">
+    المتصفح لا يدعم تشغيل الصوت.
+  </audio>
+
+  <footer>
+    هذه الصفحة هديتي لكِ يا ندو… لتبقى كل ذكرى بيننا مزروعة في الوقت.
+  </footer>
+
+  <script>
+    function shareWhatsApp() {
+      var text = encodeURIComponent("عيد ميلاد سعيد يا ندو! هذه صفحتي المميزة لكِ - من إبراهيم");
+      var url = encodeURIComponent(window.location.href);
+      var whatsappUrl = "https://wa.me/?text=" + text + "%20" + url;
+      window.open(whatsappUrl, "_blank");
+    }
+    
+    function toggleMusic() {
+      var music = document.getElementById("bgMusic");
+      if(music.paused){
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
